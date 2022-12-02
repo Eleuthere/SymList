@@ -140,3 +140,17 @@ labelSL xs = toSL $ label $ fromSL xs
 scanlSL :: (b -> a -> b) -> b -> SymList a -> SymList b
 scanlSL f e ([], []) = ([e], [])
 scanlSL f e xs       = toSL $ scanl f e $ fromSL xs
+--
+-- dropWhileSL
+--
+-- dropWhileSL :: (a -> Bool) -> SymList a -> SymList
+--   | nullSL xs = nilSL
+--   | p (headSL xs) = dropWhileSL p (tailSL xs)
+--   | otherwise = xs
+--
+-- takeWhileSL
+--
+-- takeWhileSL :: (a -> Bool) -> SymList a -> SymList
+--   | takeWhileSL p nilSL = nilSL
+--   | takeWhileSL p (x:xs, y:ys) =
+--   | otherwhise nilSL
